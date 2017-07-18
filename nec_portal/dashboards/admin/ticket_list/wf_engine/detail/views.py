@@ -10,6 +10,7 @@
 #  License for the specific language governing permissions and limitations
 #  under the License.
 #
+#
 
 from nec_portal.dashboards.project.ticket_templates.wf_engine.detail import \
     views as base_views

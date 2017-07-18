@@ -71,6 +71,7 @@ class IndexView(tables.DataTableView):
     """Index view class"""
     table_class = ticket_list_tables.TicketTable
     template_name = constants.TICKET_LIST_INDEX_VIEW_TEMPLATE
+    page_title = _("Contract Requests")
 
     def has_prev_data(self, table):
         return self._prev

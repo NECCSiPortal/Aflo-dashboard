@@ -10,6 +10,7 @@
 #  License for the specific language governing permissions and limitations
 #  under the License.
 #
+#
 
 from nec_portal.api import ticket as ticket_api
 from nec_portal.dashboards.project.ticket_list \

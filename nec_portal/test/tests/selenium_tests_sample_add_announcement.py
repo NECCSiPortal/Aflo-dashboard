@@ -10,6 +10,7 @@
 #  License for the specific language governing permissions and limitations
 #  under the License.
 #
+#
 
 """Test 'Add Announcement' on Aflo.
 Please operate setting.
@@ -368,9 +369,10 @@ class BrowserTests(test.SeleniumTestCase):
         WebDriverWait(self.selenium, timeout).until(
             lambda s: s.execute_script('return jQuery.active == 0'))
 
-    def change_setting(self):
+    def change_setting(self, page=20):
         """Change Language"""
         self.trans_and_wait('user_settings_modal', '/settings/')
+        self.fill_field('id_pagesize', page)
         self.set_select_value('id_language', self.multiple_languages)
         self.click_css('input[type=submit]')
 
@@ -579,28 +581,28 @@ class BrowserTests(test.SeleniumTestCase):
         # Show detail form.
         self._click_ticket_list('request_list', 4, 1)
 
-        # Update status.
-        self._update_request_from_detail('canceled')
+        # Update status.(id_approval_flg_2: canceled)
+        self._update_request_from_detail('id_approval_flg_2')
 
     def admin_add_announcement_approval_rejected(self):
         """Update 'Add Announcement' status to admin selected status"""
-        # Update status.
-        self._update_request_list(2, 'rejected')
+        # Update status.(id_approval_flg_1: rejected)
+        self._update_request_list(2, 'id_approval_flg_1')
 
     def admin_add_announcement_approval_scope_all_final_approval(self):
         """Update 'Add Announcement' status to admin selected status"""
-        # Update status.
-        self._update_request_list(3, 'final approval')
+        # Update status.(id_approval_flg_0: final approval)
+        self._update_request_list(3, 'id_approval_flg_0')
 
     def admin_add_announcement_approval_scope_region_final_approval(self):
         """Update 'Add Announcement' status to admin selected status"""
-        # Update status.
-        self._update_request_list(4, 'final approval')
+        # Update status.(id_approval_flg_0: final approval)
+        self._update_request_list(4, 'id_approval_flg_0')
 
     def admin_add_announcement_approval_scope_project_final_approval(self):
         """Update 'Add Announcement' status to admin selected status"""
-        # Update status.
-        self._update_request_list(5, 'final approval')
+        # Update status.(id_approval_flg_0: final approval)
+        self._update_request_list(5, 'id_approval_flg_0')
 
     # ==================================================
 
@@ -697,8 +699,8 @@ class BrowserTests(test.SeleniumTestCase):
             SET_SPECIAL_CODE
         self.fill_field('id___param_message', message)
 
-        self.click_xpath_and_ajax_wait(
-            "//input[contains(@value, '%s')]" % next_status_value)
+        self.selenium.execute_script(
+            'document.getElementById("%s").click();' % next_status_value)
 
         time.sleep(SET_TIMEOUT)
 

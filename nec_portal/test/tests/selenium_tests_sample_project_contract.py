@@ -10,6 +10,7 @@
 #  License for the specific language governing permissions and limitations
 #  under the License.
 #
+#
 
 """Test 'Project Contract' on Aflo.
 Please operate setting.
@@ -343,9 +344,10 @@ class BrowserTests(test.SeleniumTestCase):
         WebDriverWait(self.selenium, timeout).until(
             lambda s: s.execute_script('return jQuery.active == 0'))
 
-    def change_setting(self):
+    def change_setting(self, page=20):
         """Change Language"""
         self.trans_and_wait('user_settings_modal', '/settings/')
+        self.fill_field('id_pagesize', page)
         self.set_select_value('id_language', self.multiple_languages)
         self.click_css('input[type=submit]')
 
@@ -539,36 +541,54 @@ class BrowserTests(test.SeleniumTestCase):
 
         # Show detail form.
         self._click_ticket_list('request_list', 4, 1)
-        # Update status.
-        self._update_request_from_detail('canceled')
+        # Update status.(id_approval_flg_2: canceled)
+        self._update_request_from_detail('id_approval_flg_2')
 
     def admin_new_project_contract_approval_rejected(self):
         """Update 'New Project Contract' status to rejected by approval"""
-        self._update_new_project_ticket(['rejected'], 11, 2)
+        # Update status.(id_approval_flg_1: rejected)
+        self._update_new_project_ticket(['id_approval_flg_1'], 11, 2)
 
     def admin_new_project_contract_approval_accepted_to_canceled(self):
         """Update 'New Project Contract' status to canceled"""
-        self._update_new_project_ticket(['accepted', 'canceled'], 11, 3)
+        # Update status.
+        # (id_approval_flg_0: accepted, id_approval_flg_2: canceled)
+        self._update_new_project_ticket(
+            ['id_approval_flg_0', 'id_approval_flg_2'], 11, 3)
 
     def admin_new_project_contract_approval_accepted_to_rejected(self):
         """Update 'New Project Contract' status to rejected by approval"""
-        self._update_new_project_ticket(['accepted', 'rejected'], 11, 4)
+        # Update status.
+        # (id_approval_flg_0: accepted, id_approval_flg_1: rejected)
+        self._update_new_project_ticket(
+            ['id_approval_flg_0', 'id_approval_flg_1'], 11, 4)
 
     def admin_new_project_contract_approval_working_to_canceled(self):
         """Update 'New Project Contract' status to canceled"""
+        # Update status.
+        # (id_approval_flg_0: accepted, id_approval_flg_0: working,
+        #  id_approval_flg_2: canceled)
         self._update_new_project_ticket(
-            ['accepted', 'working', 'canceled'], 11, 5)
+            ['id_approval_flg_0', 'id_approval_flg_0', 'id_approval_flg_2'],
+            11, 5)
 
     def admin_new_project_contract_approval_working_to_rejected(self):
         """Update 'New Project Contract' status to rejected by approval"""
+        # Update status.
+        # (id_approval_flg_0: accepted, id_approval_flg_0: working,
+        #  id_approval_flg_1: rejected)
         self._update_new_project_ticket(
-            ['accepted', 'working', 'rejected'], 11, 6)
+            ['id_approval_flg_0', 'id_approval_flg_0', 'id_approval_flg_1'],
+            11, 6)
 
     # ==================================================
 
     def admin_new_project_contract_approval_done(self):
-        """Update 'New Project Contract' status to final approval"""
-        self._update_new_project_ticket(['accepted', 'working'], 11, 7)
+        """Update 'New Project Contract' status to done"""
+        # Update status.
+        # (id_approval_flg_0: accepted, id_approval_flg_0: working)
+        self._update_new_project_ticket(
+            ['id_approval_flg_0', 'id_approval_flg_0'], 11, 7)
 
         # Show detail form.
         self._click_ticket_list('request_list', 11, 7)
@@ -579,7 +599,8 @@ class BrowserTests(test.SeleniumTestCase):
             True, FORM_UPDATE)
         self._cancel_request()
 
-        self._update_new_project_ticket(['done'], 11, 7)
+        # Update status.(id_approval_flg_0: done)
+        self._update_new_project_ticket(['id_approval_flg_0'], 11, 7, True)
 
     # ==================================================
 
@@ -678,16 +699,16 @@ class BrowserTests(test.SeleniumTestCase):
         # Show detail form.
         self._click_ticket_list('ticket_list', 3, 1)
 
-        # Update status.
-        self._update_ticket_from_detail('canceled')
+        # Update status.(id_approval_flg_0: canceled)
+        self._update_ticket_from_detail('id_approval_flg_0')
 
     def project_cancel_project_contract_approval_rejected(self):
         """Update 'Cancel Project Contract' status to rejected"""
         # Show ticket list form.
         self._project_ticket_list()
 
-        # Update status.
-        self._update_ticket_list(2, 'rejected')
+        # Update status.(id_approval_flg_1: rejected)
+        self._update_ticket_list(2, 'id_approval_flg_1', True)
 
     # ==================================================
 
@@ -701,8 +722,8 @@ class BrowserTests(test.SeleniumTestCase):
             FORM_UPDATE)
         self._cancel_request()
 
-        # Update status.
-        self._update_ticket_list(3, 'final approval')
+        # Update status.(id_approval_flg_0: final approval)
+        self._update_ticket_list(3, 'id_approval_flg_0', True, True)
 
     # ==================================================
 
@@ -807,33 +828,36 @@ class BrowserTests(test.SeleniumTestCase):
         self.click_css('#%s input.btn-primary' % form_id)
         self.click_css('div.modal.aflo_confirm_dialog a.btn-primary')
 
-    def _update_request_from_detail(self, next_status_value):
+    def _update_request_from_detail(self, next_status_value, done_flg=False):
         """Update a request from detail form.
         :param next_status_value: Change a status to value.
+        :param done_flg: Next status is done.
         """
         self.click_css('a.btn-edit')
-        self._update_request(next_status_value)
+        self._update_request(next_status_value, done_flg)
 
     def _update_new_project_ticket(
-            self, update_status_values, col_idx=1, row_idx=1):
+            self, update_status_values, col_idx=1, row_idx=1, done_flg=False):
         """Update new project ticket.
         :param update_status_values: Update status values.
         :param col_idx: Column index.
         :param row_idx: Row index.
+        :param done_flg: Next status is done.
         """
         for update_status_value in update_status_values:
             # Show detail form.
             self._click_ticket_list('request_list', col_idx, row_idx)
             # Update status.
-            self._update_request(update_status_value)
+            self._update_request(update_status_value, done_flg)
 
-    def _update_request(self, next_status_value):
+    def _update_request(self, next_status_value, done_flg=False):
         """Update a request.
         :param next_status_value: Change a status to value.
+        :param done_flg: Next status is done.
         """
         self.wait_id(FORM_UPDATE, SET_TIMEOUT)
 
-        if next_status_value == 'done':
+        if done_flg:
             # Test UUID.
             self.fill_field('id___param_project_id', DEMO_PROJECT_ID)
             self.fill_field('id___param_user_id', DEMO_USER_ID)
@@ -846,8 +870,8 @@ class BrowserTests(test.SeleniumTestCase):
             SET_SPECIAL_CODE
         self.fill_field('id___param_message', message)
 
-        self.click_xpath_and_ajax_wait(
-            "//input[contains(@value, '%s')]" % next_status_value)
+        self.selenium.execute_script(
+            'document.getElementById("%s").click();' % next_status_value)
 
         time.sleep(SET_TIMEOUT)
 
@@ -859,33 +883,39 @@ class BrowserTests(test.SeleniumTestCase):
         self.save_screenshot()
 
     def _update_ticket_list(
-            self, row_idx, next_status_value, save_screen=True):
+            self, row_idx, next_status_value, save_screen=True,
+            final_approval_flg=False):
         """Update a ticket from ticket list form.
         :param row_idx: Set row index of ticket list form.
         :param next_status_value: Change a status to value.
         :param save_screen: Save screenshot image.
+        :param final_approval_flg: Next status is final approval.
         """
         self._click_ticket_list('ticket_list', 10, row_idx)
 
-        self._update_ticket(next_status_value, save_screen)
+        self._update_ticket(next_status_value, save_screen, final_approval_flg)
 
-    def _update_ticket_from_detail(self, next_status_value, save_screen=True):
+    def _update_ticket_from_detail(self, next_status_value, save_screen=True,
+                                   final_approval_flg=False):
         """Update a ticket from detail form.
         :param next_status_value: Change a status to value.
         :param save_screen: Save screenshot image.
+        :param final_approval_flg: Next status is final approval.
         """
         self.click_css('a.btn-edit')
 
-        self._update_ticket(next_status_value, save_screen)
+        self._update_ticket(next_status_value, save_screen, final_approval_flg)
 
-    def _update_ticket(self, next_status_value, save_screen=True):
+    def _update_ticket(self, next_status_value, save_screen=True,
+                       final_approval_flg=False):
         """Update a ticket.
         :param next_status_value: Change a status to value.
         :param save_screen: Save screenshot image.
+        :param final_approval_flg: Next status is final approval.
         """
         self.wait_id(FORM_UPDATE, SET_TIMEOUT)
 
-        if next_status_value == 'final approval':
+        if final_approval_flg:
             # Test Date.
             self.fill_field('id___param_withdrawal_date', FORM_UPDATE)
 
@@ -894,8 +924,8 @@ class BrowserTests(test.SeleniumTestCase):
             SET_SPECIAL_CODE) - 1, 'a') + SET_SPECIAL_CODE
         self.fill_field('id___param_message', message)
 
-        self.click_xpath_and_ajax_wait(
-            "//input[contains(@value, '%s')]" % next_status_value)
+        self.selenium.execute_script(
+            'document.getElementById("%s").click();' % next_status_value)
 
         if save_screen:
             time.sleep(SET_TIMEOUT)

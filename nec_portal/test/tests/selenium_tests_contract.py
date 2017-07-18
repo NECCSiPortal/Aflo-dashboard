@@ -375,8 +375,11 @@ class BrowserTests(test.SeleniumTestCase):
                              ('parent_contract_id', CONTRACT_ID_2)]
 
         for select_value, filter_value in filter_option:
-            Select(driver.find_element_by_name(filter_name)
-                   ).select_by_value(select_value)
+            self.click_xpath(
+                '//button[contains(@class, '
+                '"btn btn-default dropdown-toggle")]')
+            self.click_xpath(
+                '//a[contains(@data-select-value, "%s")]' % select_value)
             self.fill_field_by_name(filter_input_name, filter_value)
             driver.find_element_by_id(button_name).click()
 

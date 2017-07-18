@@ -10,6 +10,7 @@
 #  License for the specific language governing permissions and limitations
 #  under the License.
 #
+#
 
 """Test 'Request Pay-for-use Contract' on Aflo.
 Please operate setting.
@@ -366,14 +367,12 @@ class BrowserTests(test.SeleniumTestCase):
         WebDriverWait(self.selenium, timeout).until(
             lambda s: s.execute_script('return jQuery.active == 0'))
 
-    def change_setting(self, page=12):
+    def change_setting(self, page=20):
         """Change Language"""
         self.trans_and_wait('user_settings_modal', '/settings/')
         self.fill_field('id_pagesize', page)
         self.set_select_value('id_language', self.multiple_languages)
-        time.sleep(SET_TIMEOUT)
         self.click_css('input[type=submit]')
-        time.sleep(SET_TIMEOUT)
 
     def sign_in_project_admin(self):
         """Sign in admin user"""
@@ -506,15 +505,15 @@ class BrowserTests(test.SeleniumTestCase):
         """Update 'Pay-for-use Registration' status to canceled"""
         # Show ticket list form.
         self._project_ticket_list()
-        # Update status.
-        self._update_ticket_list(2, 'canceled')
+        # Update status.(id_approval_flg_0: canceled)
+        self._update_ticket_list(2, 'id_approval_flg_0')
 
     def project_payforuse_registration_approval_rejected(self):
         """Update 'Pay-for-use Registration' status to rejected"""
         # Show ticket list form.
         self._project_ticket_list()
-        # Update status.
-        self._update_ticket_list(3, 'rejected')
+        # Update status.(id_approval_flg_1: rejected)
+        self._update_ticket_list(3, 'id_approval_flg_1')
 
     # ==================================================
 
@@ -524,8 +523,8 @@ class BrowserTests(test.SeleniumTestCase):
         self._project_ticket_list()
         # Show detail form.
         self._click_ticket_list('ticket_list', 3, 4)
-        # Update status.
-        self._update_project_ticket_from_detail('final approval')
+        # Update status.(id_approval_flg_0: final approval)
+        self._update_project_ticket_from_detail('id_approval_flg_0')
 
     # ==================================================
 
@@ -533,8 +532,8 @@ class BrowserTests(test.SeleniumTestCase):
         """Update 'Pay-for-use Registration' double contract error test"""
         # Show ticket list form.
         self._project_ticket_list()
-        # Update status.
-        self._update_ticket_list(1, 'final approval')
+        # Update status.(id_approval_flg_0: final approval)
+        self._update_ticket_list(1, 'id_approval_flg_0')
 
     # ==================================================
 
@@ -629,11 +628,11 @@ class BrowserTests(test.SeleniumTestCase):
         self._project_ticket_list()
         # Show detail form.
         self._click_ticket_list('ticket_list', 3, 1)
-        # Update status.
-        self._update_project_ticket_from_detail('final approval')
+        # Update status.(id_approval_flg_0: final approval)
+        self._update_project_ticket_from_detail('id_approval_flg_0')
         time.sleep(SET_TIMEOUT)
         # Show overview.
-        self.trans_and_wait('project_usage', '/project/')
+        self.trans_and_wait('project_usage', '/project/overview/')
         self.save_screenshot()
 
     # ==================================================
@@ -642,8 +641,8 @@ class BrowserTests(test.SeleniumTestCase):
         """Update 'Pay-for-use Cancelling' status to canceled"""
         # Show ticket list form.
         self._project_ticket_list()
-        # Update status.
-        self._update_ticket_list(2, 'canceled')
+        # Update status.(id_approval_flg_0: canceled)
+        self._update_ticket_list(2, 'id_approval_flg_0')
 
     # ==================================================
 
@@ -651,8 +650,8 @@ class BrowserTests(test.SeleniumTestCase):
         """Update 'Pay-for-use Cancelling' status to rejected"""
         # Show ticket list form.
         self._project_ticket_list()
-        # Update status.
-        self._update_ticket_list(3, 'rejected')
+        # Update status.(id_approval_flg_1: rejected)
+        self._update_ticket_list(3, 'id_approval_flg_1')
 
     # ==================================================
 
@@ -660,8 +659,8 @@ class BrowserTests(test.SeleniumTestCase):
         """Update 'Pay-for-use Cancelling' status to final approval"""
         # Show ticket list form.
         self._project_ticket_list()
-        # Update status.
-        self._update_ticket_list(4, 'final approval')
+        # Update status.(id_approval_flg_0: final approval)
+        self._update_ticket_list(4, 'id_approval_flg_0')
 
     # ==================================================
 
@@ -726,8 +725,8 @@ class BrowserTests(test.SeleniumTestCase):
         """Update 'Pay-for-use Registration' status to final approval"""
         # Show ticket list form.
         self._project_ticket_list()
-        # Update status.
-        self._update_ticket_list(2, 'final approval')
+        # Update status.(id_approval_flg_0: final approval)
+        self._update_ticket_list(2, 'id_approval_flg_0')
 
     # ==================================================
 
@@ -828,8 +827,9 @@ class BrowserTests(test.SeleniumTestCase):
             MAX_LENGTH_MESSAGE - len(SET_SPECIAL_CODE) - 1, 'a') + \
             SET_SPECIAL_CODE
         self.fill_field('id___param_message', message)
-        self.click_xpath_and_ajax_wait(
-            "//input[contains(@value, '%s')]" % next_status_value)
+        self.selenium.execute_script(
+            'document.getElementById("%s").click();' % next_status_value)
+
         self.save_screenshot()
 
         self._submit_confirm(FORM_UPDATE)

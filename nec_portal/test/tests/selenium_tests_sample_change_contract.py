@@ -10,6 +10,7 @@
 #  License for the specific language governing permissions and limitations
 #  under the License.
 #
+#
 
 """Test 'Request Change Contract' on Aflo.
 Please operate setting.
@@ -386,9 +387,10 @@ class BrowserTests(test.SeleniumTestCase):
         WebDriverWait(self.selenium, timeout).until(
             lambda s: s.execute_script('return jQuery.active == 0'))
 
-    def change_setting(self):
+    def change_setting(self, page=20):
         """Change Language"""
         self.trans_and_wait('user_settings_modal', '/settings/')
+        self.fill_field('id_pagesize', page)
         self.set_select_value('id_language', self.multiple_languages)
         self.click_css('input[type=submit]')
 
@@ -525,8 +527,8 @@ class BrowserTests(test.SeleniumTestCase):
         """Update 'Pay-for-use Registration' status to final approval"""
         # Show ticket list form.
         self._project_ticket_list(True)
-        # Update status.
-        self._update_ticket_list(1, 'final approval')
+        # Update status.(id_approval_flg_0: final approval)
+        self._update_ticket_list(1, 'id_approval_flg_0')
 
     # ==================================================
 
@@ -670,8 +672,8 @@ class BrowserTests(test.SeleniumTestCase):
         self._project_ticket_list()
         # Show detail form.
         self._click_ticket_list('ticket_list', 3, 1)
-        # Update status.
-        self._update_project_ticket_from_detail('canceled')
+        # Update status.(id_approval_flg_0: canceled)
+        self._update_project_ticket_from_detail('id_approval_flg_0')
 
     def project_change_to_flatrate_registration_approval_rejected(self):
         """Update 'Change To Flat-rate Registration'
@@ -679,8 +681,8 @@ class BrowserTests(test.SeleniumTestCase):
         """
         # Show ticket list form.
         self._project_ticket_list()
-        # Update status.
-        self._update_ticket_list(2, 'rejected')
+        # Update status.(id_approval_flg_1: rejected)
+        self._update_ticket_list(2, 'id_approval_flg_1')
 
     def project_change_to_flatrate_registration_approval_final_approval(self):
         """Update 'Change To Flat-rate Registration'
@@ -693,8 +695,8 @@ class BrowserTests(test.SeleniumTestCase):
         self._test_change_contract_approval_irregular_max_length_over()
         self._cancel_request()
 
-        # Update status.
-        self._update_ticket_list(3, 'final approval')
+        # Update status.(id_approval_flg_0: final approval)
+        self._update_ticket_list(3, 'id_approval_flg_0')
 
     def _test_change_contract_approval_irregular_max_length_over(self):
         """Entry a 'Change Contract Approval' ticket.
@@ -717,8 +719,8 @@ class BrowserTests(test.SeleniumTestCase):
         """
         # Show ticket list form.
         self._project_ticket_list()
-        # Update status.
-        self._update_ticket_list(4, 'final approval')
+        # Update status.(id_approval_flg_0: final approval)
+        self._update_ticket_list(4, 'id_approval_flg_0')
 
     # ==================================================
 
@@ -750,8 +752,8 @@ class BrowserTests(test.SeleniumTestCase):
         """Update 'Flat-rate Registration' status to final approval"""
         # Show ticket list form.
         self._project_ticket_list(True)
-        # Update status.
-        self._update_ticket_list(1, 'final approval')
+        # Update status.(id_approval_flg_0: final approval)
+        self._update_ticket_list(1, 'id_approval_flg_0')
 
     # ==================================================
 
@@ -804,8 +806,8 @@ class BrowserTests(test.SeleniumTestCase):
         self._project_ticket_list()
         # Show detail form.
         self._click_ticket_list('ticket_list', 3, 1)
-        # Update status.
-        self._update_project_ticket_from_detail('canceled')
+        # Update status.(id_approval_flg_0: canceled)
+        self._update_project_ticket_from_detail('id_approval_flg_0')
 
     def project_change_to_payforuse_registration_approval_rejected(self):
         """Update 'Change To Pay-for-use Registration'
@@ -813,8 +815,8 @@ class BrowserTests(test.SeleniumTestCase):
         """
         # Show ticket list form.
         self._project_ticket_list()
-        # Update status.
-        self._update_ticket_list(2, 'rejected')
+        # Update status.(id_approval_flg_1: rejected)
+        self._update_ticket_list(2, 'id_approval_flg_1')
 
     def project_change_to_payforuse_registration_approval_final_approval(self):
         """Update 'Change To Pay-for-use Registration'
@@ -827,8 +829,8 @@ class BrowserTests(test.SeleniumTestCase):
         self._test_change_contract_approval_irregular_max_length_over()
         self._cancel_request()
 
-        # Update status.
-        self._update_ticket_list(3, 'final approval')
+        # Update status.(id_approval_flg_0: final approval)
+        self._update_ticket_list(3, 'id_approval_flg_0')
 
     def project_change_to_payforuse_registration_approval_double_contract(
             self):
@@ -837,8 +839,8 @@ class BrowserTests(test.SeleniumTestCase):
         """
         # Show ticket list form.
         self._project_ticket_list()
-        # Update status.
-        self._update_ticket_list(4, 'final approval')
+        # Update status.(id_approval_flg_0: final approval)
+        self._update_ticket_list(4, 'id_approval_flg_0')
 
     # ==================================================
 
@@ -892,7 +894,7 @@ class BrowserTests(test.SeleniumTestCase):
         :param save_screen: Save screenshot image.
         """
         # Show overview form.
-        self.trans_and_wait(None, '/project/')
+        self.trans_and_wait('project_usage', '/project/overview/')
 
         if save_screen:
             time.sleep(SET_TIMEOUT)
@@ -973,8 +975,8 @@ class BrowserTests(test.SeleniumTestCase):
             SET_SPECIAL_CODE) - 1, 'a') + SET_SPECIAL_CODE
         self.fill_field('id___param_message', message)
 
-        self.click_xpath_and_ajax_wait(
-            "//input[contains(@value, '%s')]" % next_status_value)
+        self.selenium.execute_script(
+            'document.getElementById("%s").click();' % next_status_value)
 
         if save_screen:
             time.sleep(SET_TIMEOUT)

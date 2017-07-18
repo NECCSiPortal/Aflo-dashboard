@@ -5,18 +5,22 @@
 {% block title %}{{ page_title }}{% endblock %}
 
 {% block page_header %}
-  <div class='page-header'>
-    {% breadcrumb_nav %}
-
-    {% if ticket_info != '' %}
-      <div class="btn-group pull-right">
-        <a href='{{ action_url }}'
-          class="btn btn-default btn-sm ajax-modal btn-edit"
-          style="{{ displaynone }}">
-          {% trans "Cancelling" %}
-        </a>
+  <div class="page-header detail-header">
+    <div class="row">
+      <div class="detail-title col-xs-12 col-sm-9">
+        <span class="h1">{{ page_title }}</span>
       </div>
-    {% endif %}
+
+      <div class="detail-actions col-xs-12 col-sm-3 text-right">
+        {% if ticket_info != '' %}
+          <a href='{{ action_url }}'
+            class="btn btn-default btn-sm ajax-modal btn-edit"
+            style="{{ displaynone }}">
+            {% trans "Cancelling" %}
+          </a>
+        {% endif %}
+      </div>
+    </div>
   </div>
 {% endblock %}
 
