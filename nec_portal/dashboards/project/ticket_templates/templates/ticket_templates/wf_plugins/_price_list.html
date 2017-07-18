@@ -1,0 +1,107 @@
+{% load i18n %}
+<h3>{% trans "Price List" %}:</h3>
+<table class='table table-bordered'>
+  {% for c in catalog %}
+  <tr>
+    <th colspan="2">{% trans c.catalog_name %}</th>
+  </tr>
+  <tr>
+    <td align="right"><label id="{{"id___price_"|add:c.key}}">{{ c.price }}</label></td>
+    <td width="50px">{{ price_currency }}</td>
+  </tr>
+  {% endfor %}
+
+  {% if display_catalog_total %}
+    <tr>
+      <td colspan="2" style="border-right:none;border-left:none;border-bottom:none;"></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="border-top:none;border-right:none;border-left:none;"></td>
+    </tr>
+
+    <tr>
+      <th colspan="2">{% trans "Total Price" %}</th>
+    </tr>
+    <tr>
+      <td align="right"><label id="total"></label></td>
+      <td>{{ price_currency }}</td>
+    </tr>
+  {% endif %}
+
+  <tr>
+    <td colspan="2" align="right" style="border-right:none;border-left:none;border-bottom:none;">
+      {% for pn in price_notice %}
+        {% trans pn %}<br>
+      {% endfor %}
+    </td>
+  </tr>
+</table>
+
+
+{% if display_catalog_total %}
+  <script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+      var get_id = function(price_obj) {
+          price_id = (price_obj.attr('id')).toString();
+          catalog_num_id = 'id___param_' + price_id.substring(11);
+          return {'price' : price_id, 'catalog' : catalog_num_id};
+      }
+
+      var calc_total = function(){
+          var _getNum = function(id, default_value){
+              var elm = $('#' + id);
+              var val = '';
+
+              if (!default_value)
+                  default_value = 0;
+
+              if (elm == undefined)
+                  return default_value;
+
+              var tagName = elm[0].tagName;
+              if (tagName  == 'INPUT' || tagName == 'SELECT') {
+                  val = elm.val();
+              } else {
+                  val = elm.text();
+              }
+
+              if (val == undefined || val == '') {
+                  val = default_value;
+              } else {
+                  val= val.replace(',', '');
+              }
+              return parseFloat(val);
+          };
+
+          $('label[id^=id___price_]').each(function() {
+              if (isNaN(_getNum($(this).attr('id')))) {
+                  $('#total').text('-');
+                  return false;
+              }
+          });
+
+          var n = 2;
+          var total = 0;
+          var round_total = 0.0;
+          var total = 0;
+
+          $('label[id^=id___price_]').each(function() {
+              ids = get_id($(this));
+              total += _getNum(ids['catalog'], 1) * _getNum(ids['price']);
+          });
+
+          round_total = Math.round( total * Math.pow( 10 , n ) ) / Math.pow( 10 , n );
+          round_total = String( round_total ).replace( /(\d)(?=(\d\d\d)+(?!\d))/g, '$1,' );
+
+          $('#total').text(round_total);
+      };
+
+      calc_total();
+
+      $('label[id^=id___price_]').each(function() {
+          ids = get_id($(this));
+          $("#" + ids['catalog']).change(calc_total);
+      });
+  });
+  </script>
+{% endif %}

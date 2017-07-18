@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Contracts" %}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("Contracts") %}
+{% endblock page_header %}
+
+{% block main %}
+  {% if region_list|length > 0 %}
+    <li class="dropdown region_contranct">
+      <a href="#" data-toggle="dropdown" class="dropdown-toggle" role="button" aria-expanded="false"
+         title="{% trans "View contracts of region portal to new window." %}">
+        {% trans "Region Contracts" %}
+        <span class="fa fa-caret-down"></span>
+      </a>
+      <ul id="region_link_list" class="dropdown-menu">
+        {% for region in region_list %}
+            <li>
+              <a href="{{ region.url }}" target="_blank">
+                <span class="fa fa-external-link"></span>
+                {{ region.name }}
+              </a>
+            </li>
+        {% endfor %}
+      </ul>
+    </li>
+  {% endif %}
+
+  {{ table.render }}
+{% endblock %}

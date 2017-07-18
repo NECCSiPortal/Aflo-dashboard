@@ -1,0 +1,45 @@
+{% extends "project/ticket_templates/wf_engine/common/_modal_form.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block left-header %}
+  {{ title }} {% trans "Information" %}
+{% endblock %}
+
+{% block left-body %}
+  <table class='table table-bordered wf_inputed_list'>
+    {% for reqin in created_input_list %}
+    <tr>
+      <td>{{ reqin.name }}</td>
+      <td id="{{ "id___param_"|add:reqin.key }}">{{ reqin.value }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% for updst in updated_input_list %}
+    {% if updst.input_list %}
+      {{ updst.status_name }}
+      <table class='table table-bordered wf_inputed_list'>
+        {% for input_data in updst.input_list %}
+        <tr>
+          <td>{{ input_data.name }}</td>
+          <td>{{ input_data.value }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      <br>
+    {% endif %}
+  {% endfor %}
+{% endblock %}
+
+{% block modal-bottom %}
+  <div class="col-sm-12">
+    {% if allowed_submit %}
+      <hr>
+      <div>
+        <fieldset>
+          {% include "horizon/common/_form_fields.html" %}
+        </fieldset>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

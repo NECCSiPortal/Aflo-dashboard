@@ -1,0 +1,548 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-15 14:50+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: api/ticket.py:516
+msgid "Unable to retrieve project catalog list."
+msgstr ""
+
+#: dashboards/admin/contracts/panel.py:25
+#: dashboards/admin/contracts/templates/contracts/index.html:3
+#: dashboards/admin/contracts/templates/contracts/index.html:6
+#: dashboards/project/contracts/panel.py:25
+#: dashboards/project/contracts/templates/contracts/index.html:3
+#: dashboards/project/contracts/templates/contracts/index.html:6
+msgid "Contracts"
+msgstr "契約"
+
+#: dashboards/admin/contracts/tables.py:44
+#: dashboards/project/contracts/tables.py:44
+msgid "Request Type ="
+msgstr "申請タイプ"
+
+#: dashboards/admin/contracts/tables.py:32
+#: dashboards/project/contracts/tables.py:33
+msgid "Contract ID ="
+msgstr "契約ID"
+
+#: dashboards/admin/contracts/tables.py:33
+#: dashboards/admin/request_list/tables.py:36
+#: dashboards/admin/ticket_list/tables.py:34
+#: dashboards/project/contracts/tables.py:34
+#: dashboards/project/ticket_list/tables.py:35
+msgid "Issuer ="
+msgstr "申請者名"
+
+#: dashboards/admin/contracts/tables.py:34
+#: dashboards/admin/request_list/tables.py:35
+#: dashboards/admin/ticket_list/tables.py:33
+#: dashboards/project/contracts/tables.py:35
+#: dashboards/project/ticket_list/tables.py:34
+msgid "Issue Date ="
+msgstr "申請日時"
+
+#: dashboards/admin/contracts/tables.py:35
+#: dashboards/project/contracts/tables.py:36
+msgid "Start Date ="
+msgstr "開始日時"
+
+#: dashboards/admin/contracts/tables.py:36
+#: dashboards/project/contracts/tables.py:37
+msgid "End Date ="
+msgstr "終了日時"
+
+#: dashboards/admin/contracts/tables.py:37
+#: dashboards/project/contracts/tables.py:38
+msgid "Contracting Date"
+msgstr "契約日時"
+
+#: dashboards/admin/contracts/tables.py:54
+#: dashboards/admin/contracts/templates/contracts/_detail_overview.html:10
+#: dashboards/project/contracts/tables.py:79
+#: dashboards/project/contracts/templates/contracts/_detail_overview.html:19
+msgid "Request Type"
+msgstr "申請タイプ"
+
+#: dashboards/admin/contracts/tables.py:56
+#: dashboards/admin/contracts/templates/contracts/_detail_overview.html:12
+#: dashboards/project/contracts/tables.py:81
+#: dashboards/project/contracts/templates/contracts/_detail_overview.html:21
+msgid "Contract ID"
+msgstr "契約ID"
+
+#: dashboards/admin/contracts/tables.py:59
+#: dashboards/admin/contracts/templates/contracts/_detail_overview.html:15
+#: dashboards/admin/request_list/tables.py:79
+#: dashboards/admin/ticket_list/tables.py:61
+#: dashboards/project/contracts/tables.py:84
+#: dashboards/project/contracts/templates/contracts/_detail_overview.html:24
+#: dashboards/project/ticket_list/tables.py:76
+msgid "Issuer"
+msgstr "申請者名"
+
+#: dashboards/admin/contracts/tables.py:61
+#: dashboards/admin/contracts/templates/contracts/_detail_overview.html:16
+#: dashboards/admin/request_list/tables.py:77
+#: dashboards/admin/ticket_list/tables.py:59
+#: dashboards/project/contracts/tables.py:86
+#: dashboards/project/contracts/templates/contracts/_detail_overview.html:25
+#: dashboards/project/ticket_list/tables.py:74
+msgid "Issue Date"
+msgstr "申請日時"
+
+#: dashboards/admin/contracts/tables.py:63
+#: dashboards/admin/contracts/templates/contracts/_detail_overview.html:17
+#: dashboards/project/contracts/tables.py:88
+#: dashboards/project/contracts/templates/contracts/_detail_overview.html:26
+msgid "Start Date"
+msgstr "開始日時"
+
+#: dashboards/admin/contracts/tables.py:65
+#: dashboards/admin/contracts/templates/contracts/_detail_overview.html:18
+#: dashboards/project/contracts/tables.py:90
+#: dashboards/project/contracts/templates/contracts/_detail_overview.html:27
+msgid "End Date"
+msgstr "終了日時"
+
+#: dashboards/admin/contracts/views.py:137
+#: dashboards/project/contracts/views.py:139
+msgid "Unable to retrieve contracts information."
+msgstr ""
+
+#: dashboards/admin/contracts/views.py:235
+#: dashboards/project/contracts/views.py:270
+msgid "Contract Details"
+msgstr "契約の詳細"
+
+#: dashboards/admin/contracts/views.py:264
+#: dashboards/project/contracts/views.py:302
+msgid "Unable to retrieve contracts details."
+msgstr ""
+
+#: dashboards/admin/contracts/templates/contracts/_detail_overview.html:13
+#: dashboards/project/contracts/templates/contracts/_detail_overview.html:22
+msgid "History ID"
+msgstr "契約履歴ID"
+
+#: dashboards/admin/private_price_lists/tables.py:77
+msgid "Price Lists"
+msgstr "価格表"
+
+#: dashboards/project/private_price_lists/tables.py:32
+msgid "Items ="
+msgstr "品目"
+
+#: dashboards/admin/private_price_lists/tables.py:162
+#: dashboards/admin/private_price_lists/tables.py:211
+msgid "Scope"
+msgstr ""
+
+#: dashboards/admin/private_price_lists/tables.py:159
+#: dashboards/admin/private_price_lists/tables.py:208
+#: dashboards/project/private_price_lists/tables.py:38
+msgid "Items"
+msgstr "品目"
+
+#: dashboards/project/private_price_lists/tables.py:41
+#: dashboards/project/private_price_lists/templates/private_price_lists/_detail_overview.html:17
+msgid "Price"
+msgstr "価格"
+
+#: dashboards/admin/private_price_lists/tables.py:141
+msgid "This price is already taken."
+msgstr ""
+
+#: dashboards/admin/private_price_lists/tables.py:244
+msgid "Invalid price format."
+msgstr "金額の形式が不正です。"
+
+#: dashboards/admin/private_price_lists/templates/private_price_lists/index.html:3
+#: dashboards/admin/private_price_lists/views.py:39
+msgid "Price Lists for Projects"
+msgstr "プロジェクト価格表"
+
+#: dashboards/admin/private_price_lists/views.py:93
+msgid "Unable to retrieve project."
+msgstr ""
+
+#: dashboards/admin/request_list/panel.py:25
+#: dashboards/admin/request_list/templates/request_list/index.html:3
+#: dashboards/admin/request_list/templates/request_list/index.html:6
+msgid "Work Requests"
+msgstr "作業依頼・お問合せ"
+
+#: dashboards/admin/request_list/tables.py:31
+#: dashboards/admin/ticket_list/tables.py:29
+#: dashboards/project/ticket_list/tables.py:30
+msgid "Category ="
+msgstr "カテゴリー"
+
+#: dashboards/admin/request_list/tables.py:32
+#: dashboards/admin/ticket_list/tables.py:30
+#: dashboards/project/ticket_list/tables.py:31
+msgid "Type ="
+msgstr "種別"
+
+#: dashboards/admin/request_list/tables.py:33
+#: dashboards/admin/ticket_list/tables.py:31
+#: dashboards/project/ticket_list/tables.py:32
+msgid "ID ="
+msgstr "ID"
+
+#: dashboards/admin/request_list/tables.py:34
+#: dashboards/admin/ticket_list/tables.py:32
+#: dashboards/project/ticket_list/tables.py:33
+msgid "Request Form ="
+msgstr "種別名"
+
+#: dashboards/admin/request_list/tables.py:37
+#: dashboards/admin/ticket_list/tables.py:35
+#: dashboards/project/ticket_list/tables.py:36
+msgid "Last Update ="
+msgstr "更新日時"
+
+#: dashboards/admin/request_list/tables.py:38
+#: dashboards/admin/ticket_list/tables.py:36
+#: dashboards/project/ticket_list/tables.py:37
+msgid "Updated By ="
+msgstr "更新者"
+
+#: dashboards/admin/request_list/tables.py:45
+#: dashboards/project/ticket_list/tables.py:44
+#: dashboards/project/ticket_templates/templates/ticket_templates/wf_engine/detail/_detail.html:7
+msgid "Edit Request"
+msgstr "申請の編集"
+
+#: dashboards/admin/request_list/tables.py:68
+#: dashboards/admin/ticket_list/tables.py:50
+#: dashboards/project/ticket_list/tables.py:65
+#: dashboards/project/ticket_templates/templates/ticket_templates/wf_engine/detail/_detail.html:21
+msgid "Category"
+msgstr "カテゴリー"
+
+#: dashboards/admin/request_list/tables.py:75
+#: dashboards/admin/ticket_list/tables.py:57
+#: dashboards/project/ticket_list/tables.py:72
+#: dashboards/project/ticket_templates/application_kinds/tables.py:104
+#: dashboards/project/ticket_templates/application_kinds/tables.py:129
+#: dashboards/project/ticket_templates/templates/ticket_templates/wf_engine/detail/_detail.html:25
+msgid "Request Form"
+msgstr "種別名"
+
+#: dashboards/admin/request_list/tables.py:81
+#: dashboards/admin/ticket_list/tables.py:63
+#: dashboards/project/ticket_list/tables.py:78
+msgid "Last Update"
+msgstr "更新日時"
+
+#: dashboards/admin/request_list/tables.py:83
+#: dashboards/admin/ticket_list/tables.py:65
+#: dashboards/project/ticket_list/tables.py:80
+#: dashboards/project/ticket_templates/templates/ticket_templates/wf_plugins/_wf_status_list.html:7
+msgid "Updated By"
+msgstr "更新者"
+
+#: dashboards/admin/request_list/views.py:177
+#: dashboards/admin/ticket_list/views.py:179
+#: dashboards/project/ticket_list/views.py:170
+msgid "Unable to retrieve requests information."
+msgstr "申請の一覧を取得できません。"
+
+#: dashboards/project/ticket_templates/wf_engine/common/views.py:112
+msgid "Submit"
+msgstr "サブミット"
+
+#: dashboards/admin/ticket_list/panel.py:25
+#: dashboards/admin/ticket_list/templates/ticket_list/index.html:3
+#: dashboards/admin/ticket_list/templates/ticket_list/index.html:6
+msgid "Contract Requests"
+msgstr "契約申請"
+
+#: dashboards/project/contracts/tables.py:44
+#: dashboards/project/contracts/templates/contracts/_detail_overview.html:8
+msgid "Cancelling"
+msgstr "解約"
+
+#: dashboards/project/private_price_lists/tables.py:55
+#: local/nec_portal_settings.py:6
+msgid "Catalog"
+msgstr "カタログ"
+
+#: dashboards/project/private_price_lists/views.py:121
+msgid "Price list can not be retrieved."
+msgstr ""
+
+#: dashboards/project/private_price_lists/templates/private_price_lists/detail.html:3
+#: dashboards/project/private_price_lists/views.py:146
+#: dashboards/project/private_price_lists/views.py:163
+msgid "Item Detail"
+msgstr "商品詳細"
+
+#: dashboards/project/private_price_lists/views.py:169
+#: dashboards/project/private_price_lists/views.py:224
+#, python-format
+msgid "Unable to retrieve details for catalog \"%s\"."
+msgstr ""
+
+#: dashboards/project/private_price_lists/templates/private_price_lists/_detail_overview.html:3
+msgid "Item Overview"
+msgstr "商品情報"
+
+#: dashboards/project/private_price_lists/templates/private_price_lists/_detail_overview.html:13
+msgid "Lifetime Start"
+msgstr "有効期間開始日時"
+
+#: dashboards/project/private_price_lists/templates/private_price_lists/_detail_overview.html:15
+msgid "Lifetime End"
+msgstr "有効期間終了日時"
+
+#: dashboards/project/private_price_lists/templates/private_price_lists/index.html:3
+#: dashboards/project/private_price_lists/templates/private_price_lists/index.html:6
+#: dashboards/project/private_price_lists/views.py:66
+#: dashboards/project/ticket_templates/templates/ticket_templates/wf_plugins/_price_list.html:2
+msgid "Price List"
+msgstr "価格表"
+
+#: dashboards/project/ticket_list/panel.py:25
+#: dashboards/project/ticket_list/templates/ticket_list/index.html:3
+#: dashboards/project/ticket_list/templates/ticket_list/index.html:6
+msgid "Issued Requests"
+msgstr "申請"
+
+#: dashboards/project/ticket_templates/wf_engine/detail/views.py:121
+msgid "Unable to get the request."
+msgstr "申請情報を取得できません。"
+
+#: dashboards/project/ticket_templates/wf_engine/update/forms.py:39
+msgid "Confirmation"
+msgstr "確認"
+
+#: dashboards/project/ticket_templates/wf_engine/common/views.py:130
+#: dashboards/project/ticket_templates/wf_engine/create/forms.py:64
+#: dashboards/project/ticket_templates/wf_engine/update/forms.py:75
+msgid "An error occurred while processing your request."
+msgstr "処理中にエラーが発生しました。"
+
+#: dashboards/project/ticket_templates/wf_engine/update/forms.py:68
+msgid "Successfully updated request."
+msgstr "正常に更新されました。"
+
+#: dashboards/project/ticket_templates/wf_engine/update/forms.py:68
+msgid "Successfully updated request.\""
+msgstr "正常に更新されました。"
+
+#: dashboards/project/ticket_templates/templates/ticket_templates/wf_plugins/_wf_status_list.html:3
+msgid "Request Status"
+msgstr "申請ステータス"
+
+#: dashboards/project/ticket_templates/templates/ticket_templates/wf_plugins/_wf_status_list.html:8
+msgid "Update Date"
+msgstr "更新日時"
+
+#: dashboards/project/ticket_templates/templates/ticket_templates/wf_plugins/_price_list.html:22
+msgid "Total Price"
+msgstr "合計金額"
+
+#: dashboards/project/ticket_templates/panel.py:25
+#: dashboards/project/ticket_templates/templates/ticket_templates/index.html:3
+#: dashboards/project/ticket_templates/views.py:28
+msgid "Request Menu"
+msgstr "申請種別"
+
+#: dashboards/admin/ticket_list/views.py:41
+#: dashboards/project/ticket_list/views.py:38
+#: dashboards/project/ticket_templates/tabs.py:47
+msgid "New Contract"
+msgstr "新規契約"
+
+#: dashboards/project/ticket_templates/tabs.py:115
+#: dashboards/project/ticket_templates/tabs.py:190
+msgid "Unable to retrieve services information."
+msgstr "申請種別の一覧を取得できません。"
+
+#: dashboards/admin/request_list/views.py:41
+#: dashboards/project/ticket_list/views.py:40
+#: dashboards/project/ticket_templates/tabs.py:124
+msgid "Work"
+msgstr "作業依頼"
+
+#: dashboards/project/ticket_templates/wf_engine/create/forms.py:58
+msgid "Successfully registration request."
+msgstr "登録に成功しました。"
+
+#: dashboards/admin/ticket_list/views.py:42
+#: dashboards/project/ticket_list/views.py:39
+msgid "Cancel Contract"
+msgstr "解約申請"
+
+#: dashboards/project/ticket_templates/templates/ticket_templates/wf_engine/detail/_detail.html:34
+#: local/nec_portal_settings.py:4
+msgid "Request"
+msgstr "申請"
+
+#: local/nec_portal_settings.py:5
+msgid "Contract"
+msgstr "契約"
+
+#: local/nec_portal_settings.py:8
+msgid "{0:,.2f}"
+msgstr ""
+
+#: local/nec_portal_settings.py:9
+msgid "USD"
+msgstr ""
+
+#: dashboards/admin/private_price_lists/panel.py:24
+#: dashboards/project/private_price_lists/panel.py:23
+msgid "Private Price Lists"
+msgstr "プライベートカタログ"
+
+#: dashboards/admin/private_price_lists/tables.py:64
+#: dashboards/admin/private_price_lists/tables.py:196
+#: dashboards/admin/private_price_lists/templates/private_price_lists/private.html:3
+#: dashboards/admin/private_price_lists/templates/private_price_lists/public.html:3
+#: dashboards/admin/private_price_lists/views.py:76
+#: dashboards/admin/private_price_lists/views.py:90
+msgid "Edit Private Price List"
+msgstr "プライベートカタログ更新"
+
+#: dashboards/admin/private_price_lists/tables.py:41
+#: dashboards/admin/private_price_lists/tables.py:235
+#: dashboards/admin/private_price_lists/views.py:144
+msgid "Edit Public Price List"
+msgstr "パブリックカタログ更新"
+
+#: dashboards/admin/private_price_lists/tables.py:170
+#: dashboards/admin/private_price_lists/tables.py:217
+msgid "Public Price"
+msgstr "パブリック価格"
+
+#: dashboards/admin/private_price_lists/tables.py:178
+msgid "Private Price"
+msgstr "プライベート価格"
+
+#: dashboards/project/contracts/templates/contracts/index.html:14
+msgid "Region Contracts"
+msgstr "リージョン契約"
+
+#: dashboards/project/contracts/templates/contracts/index.html:13
+msgid "View contracts of region portal to new window."
+msgstr "新しいウィンドウにリージョンポータル毎の契約情報を表示します。"
+
+msgid "Gold VCPU x 10 CORE(S)"
+msgstr "松 VCPU x 10 CORE(S)"
+
+msgid "Silver VCPU x 10 CORE(S)"
+msgstr "竹 VCPU x 10 CORE(S)"
+
+msgid "Bronze VCPU x 10 CORE(S)"
+msgstr "梅 VCPU x 10 CORE(S)"
+
+msgid "RAM 20 GB"
+msgstr "RAM 20 GB"
+
+msgid "Volume Storage 50 GB"
+msgstr "ボリュームストレージ 50 GB"
+
+msgid "VCPU 1CORE(S) / Day"
+msgstr "VCPU X 1CORE(S) / 日"
+
+msgid "RAM 1GB / Day"
+msgstr "RAM 1GB / 日"
+
+msgid "Volume Storage 1GB / Day"
+msgstr "ボリュームストレージ 1GB / 日"
+
+msgid "Object Storage 1GB / Day"
+msgstr "オブジェクトストレージ 1GB / 日"
+
+msgid "松 VCPU x 10 CORE(S)"
+msgstr "Gold VCPU x 10 CORE(S)"
+
+msgid "竹 VCPU x 10 CORE(S)"
+msgstr "Silver VCPU x 10 CORE(S)"
+
+msgid "梅 VCPU x 10 CORE(S)"
+msgstr "Bronze VCPU x 10 CORE(S)"
+
+msgid "ボリュームストレージ 50 GB"
+msgstr "Volume Storage 50 GB"
+
+msgid "VCPU X 1CORE(S) / 日"
+msgstr "VCPU 1CORE(S) / Day"
+
+msgid "RAM 1GB / 日"
+msgstr "RAM 1GB / Day"
+
+msgid "ボリュームストレージ 1GB / 日"
+msgstr "Volume Storage 1GB / Day"
+
+msgid "オブジェクトストレージ 1GB / 日"
+msgstr "Object Storage 1GB / Day"
+
+msgid "*Monthly fee"
+msgstr "*月額"
+
+msgid "*Tax excluded"
+msgstr "*税抜き"
+
+msgid "*Daily fee"
+msgstr "*日額"
+
+msgid "flat-rate"
+msgstr "定額課金"
+
+msgid "pay-for-use"
+msgstr "従量課金"
+
+msgid "change-to-flat-rate"
+msgstr "契約変更(従量→Quota)"
+
+msgid "change-to-pay-for-use"
+msgstr "契約変更(Quota→従量)"
+
+msgid "basic-contract"
+msgstr "基本契約"
+
+msgid "定額課金"
+msgstr "flat-rate"
+
+msgid "従量課金"
+msgstr "pay-for-use"
+
+msgid "契約変更(従量→Quota)"
+msgstr "change-to-flat-rate"
+
+msgid "契約変更(Quota→従量)"
+msgstr "change-to-pay-for-use"
+
+msgid "基本契約"
+msgstr "basic-contract"
+
+msgid "New Project Contract"
+msgstr "プロジェクト契約"
+
+msgid "Cancel Project Contract"
+msgstr "プロジェクト解約"
+
+msgid "VCPU 10, RAM 20GB, Volume Storage 50GB"
+msgstr "VCPU 10, RAM 20GB, ボリュームストレージ 50GB"
+
+msgid "VCPU, RAM, Volume Storage"
+msgstr "VCPU, RAM, ボリュームストレージ"
+
+msgid "Object Storage"
+msgstr "オブジェクトストレージ"

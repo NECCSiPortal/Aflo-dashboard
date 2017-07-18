@@ -1,0 +1,17 @@
+div.wf_engine_title {
+  margin-bottom: 10px;
+}
+div.wf_engine_detail dl dt, {
+  width: 250px;
+}
+div.wf_engine_detail dl * {
+  word-break: break-all;
+}
+div.wf_status_list td,
+table.wf_inputed_list tbody tr td {
+  word-break: break-all;
+}
+
+li.region_contranct {
+  list-style:none;
+}

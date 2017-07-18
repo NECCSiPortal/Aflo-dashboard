@@ -1,0 +1,9 @@
+{% load i18n %}
+{% if project_name != '' %}
+  <table class='table table-bordered'>
+    <tr>
+      <th>{% trans "Project" %}</th>
+      <td>{{ project_name }}</td>
+    </tr>
+  </table>
+{% endif %}

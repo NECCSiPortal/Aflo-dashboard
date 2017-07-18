@@ -1,0 +1,509 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-15 14:50+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: api/ticket.py:516
+msgid "Unable to retrieve project catalog list."
+msgstr ""
+
+#: dashboards/admin/contracts/panel.py:25
+#: dashboards/admin/contracts/templates/contracts/index.html:3
+#: dashboards/admin/contracts/templates/contracts/index.html:6
+#: dashboards/project/contracts/panel.py:25
+#: dashboards/project/contracts/templates/contracts/index.html:3
+#: dashboards/project/contracts/templates/contracts/index.html:6
+msgid "Contracts"
+msgstr ""
+
+#: dashboards/admin/contracts/tables.py:44
+#: dashboards/project/contracts/tables.py:44
+msgid "Request Type ="
+msgstr ""
+
+#: dashboards/admin/contracts/tables.py:32
+#: dashboards/project/contracts/tables.py:33
+msgid "Contract ID ="
+msgstr ""
+
+#: dashboards/admin/contracts/tables.py:33
+#: dashboards/admin/request_list/tables.py:36
+#: dashboards/admin/ticket_list/tables.py:34
+#: dashboards/project/contracts/tables.py:34
+#: dashboards/project/ticket_list/tables.py:35
+msgid "Issuer ="
+msgstr ""
+
+#: dashboards/admin/contracts/tables.py:34
+#: dashboards/admin/request_list/tables.py:35
+#: dashboards/admin/ticket_list/tables.py:33
+#: dashboards/project/contracts/tables.py:35
+#: dashboards/project/ticket_list/tables.py:34
+msgid "Issue Date ="
+msgstr ""
+
+#: dashboards/admin/contracts/tables.py:35
+#: dashboards/project/contracts/tables.py:36
+msgid "Start Date ="
+msgstr ""
+
+#: dashboards/admin/contracts/tables.py:36
+#: dashboards/project/contracts/tables.py:37
+msgid "End Date ="
+msgstr ""
+
+#: dashboards/admin/contracts/tables.py:37
+#: dashboards/project/contracts/tables.py:38
+msgid "Contracting Date"
+msgstr ""
+
+#: dashboards/admin/contracts/tables.py:54
+#: dashboards/admin/contracts/templates/contracts/_detail_overview.html:10
+#: dashboards/project/contracts/tables.py:79
+#: dashboards/project/contracts/templates/contracts/_detail_overview.html:19
+msgid "Request Type"
+msgstr ""
+
+#: dashboards/admin/contracts/tables.py:56
+#: dashboards/admin/contracts/templates/contracts/_detail_overview.html:12
+#: dashboards/project/contracts/tables.py:81
+#: dashboards/project/contracts/templates/contracts/_detail_overview.html:21
+msgid "Contract ID"
+msgstr ""
+
+#: dashboards/admin/contracts/tables.py:59
+#: dashboards/admin/contracts/templates/contracts/_detail_overview.html:15
+#: dashboards/admin/request_list/tables.py:79
+#: dashboards/admin/ticket_list/tables.py:61
+#: dashboards/project/contracts/tables.py:84
+#: dashboards/project/contracts/templates/contracts/_detail_overview.html:24
+#: dashboards/project/ticket_list/tables.py:76
+msgid "Issuer"
+msgstr ""
+
+#: dashboards/admin/contracts/tables.py:61
+#: dashboards/admin/contracts/templates/contracts/_detail_overview.html:16
+#: dashboards/admin/request_list/tables.py:77
+#: dashboards/admin/ticket_list/tables.py:59
+#: dashboards/project/contracts/tables.py:86
+#: dashboards/project/contracts/templates/contracts/_detail_overview.html:25
+#: dashboards/project/ticket_list/tables.py:74
+msgid "Issue Date"
+msgstr ""
+
+#: dashboards/admin/contracts/tables.py:63
+#: dashboards/admin/contracts/templates/contracts/_detail_overview.html:17
+#: dashboards/project/contracts/tables.py:88
+#: dashboards/project/contracts/templates/contracts/_detail_overview.html:26
+msgid "Start Date"
+msgstr ""
+
+#: dashboards/admin/contracts/tables.py:65
+#: dashboards/admin/contracts/templates/contracts/_detail_overview.html:18
+#: dashboards/project/contracts/tables.py:90
+#: dashboards/project/contracts/templates/contracts/_detail_overview.html:27
+msgid "End Date"
+msgstr ""
+
+#: dashboards/admin/contracts/views.py:137
+#: dashboards/project/contracts/views.py:139
+msgid "Unable to retrieve contracts information."
+msgstr ""
+
+#: dashboards/admin/contracts/views.py:235
+#: dashboards/project/contracts/views.py:270
+msgid "Contract Details"
+msgstr ""
+
+#: dashboards/admin/contracts/views.py:264
+#: dashboards/project/contracts/views.py:302
+msgid "Unable to retrieve contracts details."
+msgstr ""
+
+#: dashboards/admin/contracts/templates/contracts/_detail_overview.html:13
+#: dashboards/project/contracts/templates/contracts/_detail_overview.html:22
+msgid "History ID"
+msgstr ""
+
+#: dashboards/admin/private_price_lists/tables.py:77
+msgid "Price Lists"
+msgstr ""
+
+#: dashboards/project/private_price_lists/tables.py:32
+msgid "Items ="
+msgstr ""
+
+#: dashboards/admin/private_price_lists/tables.py:162
+#: dashboards/admin/private_price_lists/tables.py:211
+msgid "Scope"
+msgstr ""
+
+#: dashboards/admin/private_price_lists/tables.py:159
+#: dashboards/admin/private_price_lists/tables.py:208
+#: dashboards/project/private_price_lists/tables.py:38
+msgid "Items"
+msgstr ""
+
+#: dashboards/project/private_price_lists/tables.py:41
+#: dashboards/project/private_price_lists/templates/private_price_lists/_detail_overview.html:17
+msgid "Price"
+msgstr ""
+
+#: dashboards/admin/private_price_lists/tables.py:141
+msgid "This price is already taken."
+msgstr ""
+
+#: dashboards/admin/private_price_lists/tables.py:244
+msgid "Invalid price format."
+msgstr ""
+
+#: dashboards/admin/private_price_lists/templates/private_price_lists/index.html:3
+#: dashboards/admin/private_price_lists/views.py:39
+msgid "Price Lists for Projects"
+msgstr ""
+
+#: dashboards/admin/private_price_lists/views.py:93
+msgid "Unable to retrieve project."
+msgstr ""
+
+#: dashboards/admin/request_list/panel.py:25
+#: dashboards/admin/request_list/templates/request_list/index.html:3
+#: dashboards/admin/request_list/templates/request_list/index.html:6
+msgid "Work Requests"
+msgstr ""
+
+#: dashboards/admin/request_list/tables.py:31
+#: dashboards/admin/ticket_list/tables.py:29
+#: dashboards/project/ticket_list/tables.py:30
+msgid "Category ="
+msgstr ""
+
+#: dashboards/admin/request_list/tables.py:32
+#: dashboards/admin/ticket_list/tables.py:30
+#: dashboards/project/ticket_list/tables.py:31
+msgid "Type ="
+msgstr ""
+
+#: dashboards/admin/request_list/tables.py:33
+#: dashboards/admin/ticket_list/tables.py:31
+#: dashboards/project/ticket_list/tables.py:32
+msgid "ID ="
+msgstr ""
+
+#: dashboards/admin/request_list/tables.py:34
+#: dashboards/admin/ticket_list/tables.py:32
+#: dashboards/project/ticket_list/tables.py:33
+msgid "Request Form ="
+msgstr ""
+
+#: dashboards/admin/request_list/tables.py:37
+#: dashboards/admin/ticket_list/tables.py:35
+#: dashboards/project/ticket_list/tables.py:36
+msgid "Last Update ="
+msgstr ""
+
+#: dashboards/admin/request_list/tables.py:38
+#: dashboards/admin/ticket_list/tables.py:36
+#: dashboards/project/ticket_list/tables.py:37
+msgid "Updated By ="
+msgstr ""
+
+#: dashboards/admin/request_list/tables.py:45
+#: dashboards/project/ticket_list/tables.py:44
+#: dashboards/project/ticket_templates/templates/ticket_templates/wf_engine/detail/_detail.html:7
+msgid "Edit Request"
+msgstr ""
+
+#: dashboards/admin/request_list/tables.py:68
+#: dashboards/admin/ticket_list/tables.py:50
+#: dashboards/project/ticket_list/tables.py:65
+#: dashboards/project/ticket_templates/templates/ticket_templates/wf_engine/detail/_detail.html:21
+msgid "Category"
+msgstr ""
+
+#: dashboards/admin/request_list/tables.py:75
+#: dashboards/admin/ticket_list/tables.py:57
+#: dashboards/project/ticket_list/tables.py:72
+#: dashboards/project/ticket_templates/application_kinds/tables.py:104
+#: dashboards/project/ticket_templates/application_kinds/tables.py:129
+#: dashboards/project/ticket_templates/templates/ticket_templates/wf_engine/detail/_detail.html:25
+msgid "Request Form"
+msgstr ""
+
+#: dashboards/admin/request_list/tables.py:81
+#: dashboards/admin/ticket_list/tables.py:63
+#: dashboards/project/ticket_list/tables.py:78
+msgid "Last Update"
+msgstr ""
+
+#: dashboards/admin/request_list/tables.py:83
+#: dashboards/admin/ticket_list/tables.py:65
+#: dashboards/project/ticket_list/tables.py:80
+#: dashboards/project/ticket_templates/templates/ticket_templates/wf_plugins/_wf_status_list.html:7
+msgid "Updated By"
+msgstr ""
+
+#: dashboards/admin/request_list/views.py:177
+#: dashboards/admin/ticket_list/views.py:179
+#: dashboards/project/ticket_list/views.py:170
+msgid "Unable to retrieve requests information."
+msgstr ""
+
+#: dashboards/project/ticket_templates/wf_engine/common/views.py:112
+msgid "Submit"
+msgstr ""
+
+#: dashboards/admin/ticket_list/panel.py:25
+#: dashboards/admin/ticket_list/templates/ticket_list/index.html:3
+#: dashboards/admin/ticket_list/templates/ticket_list/index.html:6
+msgid "Contract Requests"
+msgstr ""
+
+#: dashboards/project/contracts/tables.py:44
+#: dashboards/project/contracts/templates/contracts/_detail_overview.html:8
+msgid "Cancelling"
+msgstr ""
+
+#: dashboards/project/private_price_lists/tables.py:55
+#: local/nec_portal_settings.py:6
+msgid "Catalog"
+msgstr ""
+
+#: dashboards/project/private_price_lists/views.py:121
+msgid "Price list can not be retrieved."
+msgstr ""
+
+#: dashboards/project/private_price_lists/templates/private_price_lists/detail.html:3
+#: dashboards/project/private_price_lists/views.py:146
+#: dashboards/project/private_price_lists/views.py:163
+msgid "Item Detail"
+msgstr ""
+
+#: dashboards/project/private_price_lists/views.py:169
+#: dashboards/project/private_price_lists/views.py:224
+#, python-format
+msgid "Unable to retrieve details for catalog \"%s\"."
+msgstr ""
+
+#: dashboards/project/private_price_lists/templates/private_price_lists/_detail_overview.html:3
+msgid "Item Overview"
+msgstr ""
+
+#: dashboards/project/private_price_lists/templates/private_price_lists/_detail_overview.html:13
+msgid "Lifetime Start"
+msgstr ""
+
+#: dashboards/project/private_price_lists/templates/private_price_lists/_detail_overview.html:15
+msgid "Lifetime End"
+msgstr ""
+
+#: dashboards/project/private_price_lists/templates/private_price_lists/index.html:3
+#: dashboards/project/private_price_lists/templates/private_price_lists/index.html:6
+#: dashboards/project/private_price_lists/views.py:66
+#: dashboards/project/ticket_templates/templates/ticket_templates/wf_plugins/_price_list.html:2
+msgid "Price List"
+msgstr ""
+
+#: dashboards/project/ticket_list/panel.py:25
+#: dashboards/project/ticket_list/templates/ticket_list/index.html:3
+#: dashboards/project/ticket_list/templates/ticket_list/index.html:6
+msgid "Issued Requests"
+msgstr ""
+
+#: dashboards/project/ticket_templates/wf_engine/detail/views.py:121
+msgid "Unable to get the request."
+msgstr ""
+
+#: dashboards/project/ticket_templates/wf_engine/update/forms.py:39
+msgid "Confirmation"
+msgstr ""
+
+#: dashboards/project/ticket_templates/wf_engine/common/views.py:130
+#: dashboards/project/ticket_templates/wf_engine/create/forms.py:64
+#: dashboards/project/ticket_templates/wf_engine/update/forms.py:75
+msgid "An error occurred while processing your request."
+msgstr ""
+
+#: dashboards/project/ticket_templates/wf_engine/update/forms.py:68
+msgid "Successfully updated request."
+msgstr ""
+
+#: dashboards/project/ticket_templates/wf_engine/update/forms.py:68
+msgid "Successfully updated request.\""
+msgstr ""
+
+#: dashboards/project/ticket_templates/templates/ticket_templates/wf_plugins/_wf_status_list.html:3
+msgid "Request Status"
+msgstr ""
+
+#: dashboards/project/ticket_templates/templates/ticket_templates/wf_plugins/_wf_status_list.html:8
+msgid "Update Date"
+msgstr ""
+
+#: dashboards/project/ticket_templates/templates/ticket_templates/wf_plugins/_price_list.html:22
+msgid "Total Price"
+msgstr ""
+
+#: dashboards/project/ticket_templates/panel.py:25
+#: dashboards/project/ticket_templates/templates/ticket_templates/index.html:3
+#: dashboards/project/ticket_templates/views.py:28
+msgid "Request Menu"
+msgstr ""
+
+#: dashboards/admin/ticket_list/views.py:41
+#: dashboards/project/ticket_list/views.py:38
+#: dashboards/project/ticket_templates/tabs.py:47
+msgid "New Contract"
+msgstr ""
+
+#: dashboards/project/ticket_templates/tabs.py:115
+#: dashboards/project/ticket_templates/tabs.py:190
+msgid "Unable to retrieve services information."
+msgstr ""
+
+#: dashboards/admin/request_list/views.py:41
+#: dashboards/project/ticket_list/views.py:40
+#: dashboards/project/ticket_templates/tabs.py:124
+msgid "Work"
+msgstr ""
+
+#: dashboards/project/ticket_templates/wf_engine/create/forms.py:58
+msgid "Successfully registration request."
+msgstr ""
+
+#: dashboards/admin/ticket_list/views.py:42
+#: dashboards/project/ticket_list/views.py:39
+msgid "Cancel Contract"
+msgstr ""
+
+#: dashboards/project/ticket_templates/templates/ticket_templates/wf_engine/detail/_detail.html:34
+#: local/nec_portal_settings.py:4
+msgid "Request"
+msgstr ""
+
+#: local/nec_portal_settings.py:5
+msgid "Contract"
+msgstr ""
+
+#: local/nec_portal_settings.py:8
+msgid "{0:,.2f}"
+msgstr ""
+
+#: local/nec_portal_settings.py:9
+msgid "USD"
+msgstr ""
+
+#: dashboards/admin/private_price_lists/panel.py:24
+#: dashboards/project/private_price_lists/panel.py:23
+msgid "Private Price Lists"
+msgstr ""
+
+#: dashboards/admin/private_price_lists/tables.py:64
+#: dashboards/admin/private_price_lists/tables.py:196
+#: dashboards/admin/private_price_lists/templates/private_price_lists/private.html:3
+#: dashboards/admin/private_price_lists/templates/private_price_lists/public.html:3
+#: dashboards/admin/private_price_lists/views.py:76
+#: dashboards/admin/private_price_lists/views.py:90
+msgid "Edit Private Price List"
+msgstr ""
+
+#: dashboards/admin/private_price_lists/tables.py:41
+#: dashboards/admin/private_price_lists/tables.py:235
+#: dashboards/admin/private_price_lists/views.py:144
+msgid "Edit Public Price List"
+msgstr ""
+
+#: dashboards/admin/private_price_lists/tables.py:170
+#: dashboards/admin/private_price_lists/tables.py:217
+msgid "Public Price"
+msgstr ""
+
+#: dashboards/admin/private_price_lists/tables.py:178
+msgid "Private Price"
+msgstr ""
+
+#: dashboards/project/contracts/templates/contracts/index.html:14
+msgid "Region Contracts"
+msgstr ""
+
+#: dashboards/project/contracts/templates/contracts/index.html:13
+msgid "View contracts of region portal to new window."
+msgstr ""
+
+msgid "Gold VCPU x 10 CORE(S)"
+msgstr ""
+
+msgid "Silver VCPU x 10 CORE(S)"
+msgstr ""
+
+msgid "Bronze VCPU x 10 CORE(S)"
+msgstr ""
+
+msgid "RAM 20 GB"
+msgstr ""
+
+msgid "Volume Storage 50 GB"
+msgstr ""
+
+msgid "VCPU 1CORE(S) / Day"
+msgstr ""
+
+msgid "RAM 1GB / Day"
+msgstr ""
+
+msgid "Volume Storage 1GB / Day"
+msgstr ""
+
+msgid "Object Storage 1GB / Day"
+msgstr ""
+
+msgid "*Monthly fee"
+msgstr ""
+
+msgid "*Tax excluded"
+msgstr ""
+
+msgid "*Daily fee"
+msgstr ""
+
+msgid "flat-rate"
+msgstr ""
+
+msgid "pay-for-use"
+msgstr ""
+
+msgid "change-to-flat-rate"
+msgstr ""
+
+msgid "change-to-pay-for-use"
+msgstr ""
+
+msgid "basic-contract"
+msgstr ""
+
+msgid "New Project Contract"
+msgstr ""
+
+msgid "Cancel Project Contract"
+msgstr ""
+
+msgid "VCPU 10, RAM 20GB, Volume Storage 50GB"
+msgstr ""
+
+msgid "VCPU, RAM, Volume Storage"
+msgstr ""
+
+msgid "Object Storage"
+msgstr ""

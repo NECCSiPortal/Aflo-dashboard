@@ -1,0 +1,7 @@
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+    {% for c in contract %}
+      $('#id___param_' + '{{ c.contract_key }}').val({{ c.contract_num }}).attr('readonly', 'readonly');
+    {% endfor %}
+  });
+</script>

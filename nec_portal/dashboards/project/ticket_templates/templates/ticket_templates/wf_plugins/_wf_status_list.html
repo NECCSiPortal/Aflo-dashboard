@@ -1,0 +1,21 @@
+{% load i18n %}
+<div class="detail wf_status_list">
+  <h4>{% trans "Request Status" %}</h4>
+  <hr class="header_rule">
+  <table class='table table-bordered'>
+    <tr>
+      <th>{% trans "Updated By" %}</th>
+      <th>{% trans "Update Date" %}</th>
+      <th>{% trans "Status" %}</th>
+      <th>{% trans "Message" %}</th>
+    </tr>
+    {% for message in passed_status_messages %}
+      <tr>
+        <td>{{ message.user }}</td>
+        <td>{{ message.update_date }}</td>
+        <td>{{ message.status }}</td>
+        <td>{{ message.message|linebreaksbr }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>

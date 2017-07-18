@@ -1,0 +1,91 @@
+{% extends "horizon/common/_modal.html" %}
+{% load i18n %}
+
+{% block modal-header %}
+  <div class="wf_engine_title">{{ title }}</div>
+  <div>{{ sub_title }}</div>
+{% endblock %}
+
+{% block modal-js %}
+  <script src='{{ WEBROOT }}i18n/js/nec_portal' type='text/javascript' charset='utf-8'></script>
+  <script src='{{ STATIC_URL }}nec_portal/aflo/wf_engine_datepicker.js' type='text/javascript' charset='utf-8'></script>
+{% endblock %}
+
+{% block content %}
+  <form id="{% block form_id %}{{ form_id }}{% endblock %}"
+        ng-controller="{% block ng_controller %}DummyController{% endblock %}"
+        name="{% block form_name %}{% endblock %}"
+        autocomplete="{% block autocomplete %}{% if form.no_autocomplete %}off{% endif %}{% endblock %}"
+        class="{% block form_class %}{% endblock %}"
+        action="{% block form_action %}{{ submit_url }}{% endblock %}"
+        method="{% block form-method %}POST{% endblock %}"
+      {% block form_validation %}{% endblock %}
+      {% if add_to_field %}data-add-to-field="{{ add_to_field }}"{% endif %} {% block form_attrs %}{% endblock %}>
+    {% csrf_token %}
+    <div class="modal-body clearfix">
+      {% block modal-body %}
+        <div class="row">
+          <div class="col-sm-6">
+            {% block left-header %}{% endblock %}
+            {% block left-custom %}
+              {% if custom_left %}
+                {% for plugin_template in custom_left %}
+                  {% include plugin_template %}
+                {% endfor %}
+              {% endif %}
+            {% endblock %}
+            {% block left-body %}
+              <fieldset>
+              {% include "horizon/common/_form_fields.html" %}
+              </fieldset>
+            {% endblock %}
+          </div>
+          <div class="col-sm-6">
+            {% block right-header %}
+              {% if description %}
+                <h3>{% trans "Description:" %}</h3>
+                <p>{{ description }}</p>
+              {% endif %}
+            {% endblock %}
+            {% block right-custom %}
+              {% if custom_right %}
+                {% for plugin_template in custom_right %}
+                  {% include plugin_template %}
+                {% endfor %}
+              {% endif %}
+            {% endblock %}
+            {% block right-body %}{% endblock %}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            {% block bottom-custom %}
+              {% if custom_bottom %}
+                {% for plugin_template in custom_bottom %}
+                  {% include plugin_template %}
+                {% endfor %}
+              {% endif %}
+            {% endblock %}
+          </div>
+        </div>
+        <div class="row">
+          {% block modal-bottom %}{% endblock %}
+        </div>
+      {% endblock %}
+    </div>
+    <div class="modal-footer">
+      {% block modal-footer %}
+        {% if cancel_url %}
+          <a href="{% block cancel_url %}{{ cancel_url }}{% endblock %}"
+             class="btn btn-default cancel">
+            {{ cancel_label }}
+          </a>
+        {% endif %}
+        {% if allowed_submit %}
+          <input class="btn btn-primary" type="button" value="{{ submit_label }}"
+                 onclick="aflo.wf_engine_chk_confirm(this, '{{ form_id }}');" />
+        {% endif %}
+      {% endblock %}
+    </div>
+  </form>
+{% endblock %}

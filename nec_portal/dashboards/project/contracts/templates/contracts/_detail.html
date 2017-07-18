@@ -1,0 +1,29 @@
+{% load i18n sizeformat %}
+
+{% block information %}
+  <div class="detail wf_engine_detail">
+    <dl class="dl-horizontal">
+      <dt>{% trans "Request Type" %}</dt><dd>{{ contract.ticket_template_name|default:_("None") }}</dd>
+      <dt>{% trans "Request Form" %}</dt><dd>{{ contract.application_kinds_name|default:_("None") }}</dd>
+      <dt>{% trans "Contract ID" %}</dt><dd>{{ contract.parent_contract_id|default:_("None") }}</dd>
+      <dt>{% trans "History ID" %}</dt><dd>{{ contract.contract_id|default:_("None") }}</dd>
+      <dt>{% trans "Request ID" %}</dt><dd>{{ contract.application_id|default:_("None") }}</dd>
+      <dt>{% trans "Issuer" %}</dt><dd>{{ contract.application_name|default:_("None") }}</dd>
+      <dt>{% trans "Issue Date" %}</dt><dd>{{ contract.application_date|default:_("None") }}</dd>
+      <dt>{% trans "Start Date" %}</dt><dd>{{ contract.lifetime_start|default:_("None") }}</dd>
+      <dt>{% trans "End Date" %}</dt><dd>{{ contract.lifetime_end|default:_("-") }}</dd>
+    </dl>
+  </div>
+
+  <div class="detail wf_engine_detail">
+    <h4>{% trans "Information" %}</h4>
+    <hr class="header_rule">
+    <dl class="dl-horizontal">
+      {% for ticket_detail in ticket_list %}
+        <dt>{{ ticket_detail.catalog_name|default:_("None") }}</dt>
+        <dd>{{ ticket_detail.catalog_num }}</dd>
+      {% endfor %}
+    </dl>
+  </div>
+{% endblock %}
+

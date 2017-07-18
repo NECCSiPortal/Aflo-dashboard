@@ -1,0 +1,53 @@
+{% load i18n sizeformat %}
+
+{% block information %}
+  <div class="detail wf_engine_detail">
+    <dl class="dl-horizontal">
+      <dt>{% trans "Project" %}</dt>
+      <dd>{{ project_name }}</dd>
+      <dt>{% trans "Category" %}</dt>
+      <dd>{{ category }}</dd>
+      <dt>{% trans "Type" %}</dt>
+      <dd>{{ type }}</dd>
+      <dt>{% trans "Request Form" %}</dt>
+      <dd>{{ request_form }}</dd>
+      <dt>{% trans "ID" %}</dt>
+      <dd>{{ ticket_id }}</dd>
+    </dl>
+  </div>
+{% endblock %}
+
+{% block request_data %}
+  {% if created_input_list or updated_input_list %}
+    <div class="detail wf_engine_detail">
+      <h4>{% trans "Request" %}</h4>
+      <hr class="header_rule">
+      <dl class="dl-horizontal">
+        {% for reqin in created_input_list %}
+          <dt>{{ reqin.name }}</dt>
+          <dd id="{{ "id___param_"|add:reqin.key }}">{{ reqin.value }}</dd>
+        {% endfor %}
+      </dl>
+      {% for updst in updated_input_list %}
+        {% if updst.input_list %}
+          {{ updst.status_name }}
+          <dl class="dl-horizontal">
+            {% for input_data in updst.input_list %}
+              <dt>{{ input_data.name }}</dt>
+              <dd>{{ input_data.value }}</dd>
+            {% endfor %}
+          </dl>
+          <br>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block bottom-custom %}
+  {% if custom_bottom %}
+    {% for plugin_template in custom_bottom %}
+      {% include plugin_template %}
+    {% endfor %}
+  {% endif %}
+{% endblock %}

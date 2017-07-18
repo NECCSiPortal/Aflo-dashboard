@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Update Form" %}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("Update Form") %}
+{% endblock page_header %}
+
+{% block main %}
+  {% include 'project/ticket_templates/wf_engine/update/_update.html' %}
+{% endblock %}
+
